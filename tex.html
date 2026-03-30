@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@200;300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed-variant": "#573878",
+              "inverse-surface": "#2f3130",
+              "on-secondary-fixed-variant": "#51434c",
+              "secondary-fixed": "#f1dde9",
+              "on-error": "#ffffff",
+              "primary-container": "#f6e7ff",
+              "secondary-container": "#efdae6",
+              "surface-container-low": "#f4f3f2",
+              "error": "#ba1a1a",
+              "secondary-fixed-dim": "#d5c1cd",
+              "surface-bright": "#faf9f8",
+              "on-surface": "#1a1c1c",
+              "surface-container-high": "#e9e8e7",
+              "on-secondary": "#ffffff",
+              "surface-container": "#eeeeed",
+              "outline": "#7a757c",
+              "on-background": "#1a1c1c",
+              "on-tertiary-container": "#656b72",
+              "on-surface-variant": "#49454c",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed": "#161c22",
+              "primary-fixed-dim": "#dbb8ff",
+              "surface-variant": "#e3e2e1",
+              "on-tertiary-fixed-variant": "#41474e",
+              "secondary": "#695a64",
+              "surface-container-lowest": "#ffffff",
+              "inverse-primary": "#dbb8ff",
+              "tertiary-container": "#e7edf5",
+              "on-secondary-container": "#6e5e68",
+              "tertiary-fixed-dim": "#c1c7cf",
+              "background": "#faf9f8",
+              "surface-container-highest": "#e3e2e1",
+              "inverse-on-surface": "#f1f0f0",
+              "error-container": "#ffdad6",
+              "on-error-container": "#93000a",
+              "on-primary-fixed": "#29074a",
+              "tertiary-fixed": "#dde3eb",
+              "on-primary-container": "#7c5c9f",
+              "surface-tint": "#6f5092",
+              "on-secondary-fixed": "#231820",
+              "primary-fixed": "#efdbff",
+              "outline-variant": "#cac5cc",
+              "tertiary": "#595f66",
+              "primary": "#6f5092",
+              "surface-dim": "#dadad9",
+              "surface": "#faf9f8",
+              "on-tertiary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .noto-serif { font-family: 'Noto Serif', serif; }
+        .manrope { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface manrope selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl flex justify-between items-center px-12 py-6 max-w-[1920px] mx-auto">
+<div class="text-2xl font-serif italic text-purple-950 dark:text-purple-50">The Final Ritual</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="manrope text-[11px] uppercase tracking-[0.2em] font-light text-slate-500 dark:text-slate-400 hover:text-purple-800 dark:hover:text-purple-200 transition-colors duration-500" href="#">Atelier</a>
+<a class="manrope text-[11px] uppercase tracking-[0.2em] font-light text-purple-900 dark:text-purple-100 border-b border-purple-200/50 pb-1 hover:text-purple-800 dark:hover:text-purple-200 transition-colors duration-500" href="#">Gallery</a>
+<a class="manrope text-[11px] uppercase tracking-[0.2em] font-light text-slate-500 dark:text-slate-400 hover:text-purple-800 dark:hover:text-purple-200 transition-colors duration-500" href="#">Lab</a>
+<a class="manrope text-[11px] uppercase tracking-[0.2em] font-light text-slate-500 dark:text-slate-400 hover:text-purple-800 dark:hover:text-purple-200 transition-colors duration-500" href="#">Ritual</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-purple-900 dark:text-purple-100 hover:opacity-70 transition-opacity duration-300">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="md:hidden text-purple-900">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-[1440px] mx-auto">
+<!-- Header Section -->
+<header class="mb-20 text-center md:text-left max-w-3xl">
+<span class="manrope text-[10px] uppercase tracking-[0.4em] text-outline mb-4 block">The Selection</span>
+<h1 class="noto-serif text-5xl md:text-7xl tracking-tight text-on-surface leading-tight">Scent Gallery</h1>
+<p class="mt-8 text-lg font-light text-on-surface-variant leading-relaxed manrope opacity-80">
+                An ethereal curation of memories captured in glass. Explore our signature compositions designed to linger in the spaces between dreams and reality.
+            </p>
+</header>
+<!-- Filter / Tabs -->
+<div class="flex flex-wrap gap-8 mb-16 border-b border-outline-variant/10 pb-6">
+<button class="manrope text-[12px] uppercase tracking-widest font-semibold text-primary border-b-2 border-primary pb-6 -mb-[26px] transition-all">FOR HER</button>
+<button class="manrope text-[12px] uppercase tracking-widest font-light text-outline hover:text-primary transition-all pb-6">FOR HIM</button>
+<button class="manrope text-[12px] uppercase tracking-widest font-light text-outline hover:text-primary transition-all pb-6">UNISEX ARCHIVE</button>
+</div>
+<!-- Bento Grid Gallery -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+<!-- Card 1: No. 5 -->
+<div class="group flex flex-col space-y-6">
+<div class="aspect-[4/5] overflow-hidden rounded-lg bg-secondary-container/30 relative transition-transform duration-700 group-hover:scale-[1.02]">
+<img alt="No. 5 Luxury Perfume" class="w-full h-full object-cover mix-blend-multiply opacity-90 group-hover:opacity-100 transition-opacity duration-500" data-alt="Minimalist perfume bottle on a soft beige background with elegant shadows and a single dried flower petal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3X2QRafF2z0mJ9phCDrqBePN4dgUQcbtvw-zIvr5EWl6VcjX2TB7pdRYNvZUzDHio3iPqMKd5roOLEH11pjaOXPAK6v_YS7BxNWc3jwld_3oevXwOZZhq1KIIvzXjjAN3ymKsNjChTJ-yZcPGTE68Etnn7b9sPctal4Xoh3SNKqIS0iT_Ch958vQ1NdGWofiES-0VFaBsGsaQl_bkFuYhojqdJIju_knyTHClqj7W0y7xbWg_OrSxmxSGTFGZNF8iigTAk9ayV2Y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low/40 to-transparent"></div>
+</div>
+<div class="flex flex-col space-y-2">
+<div class="flex justify-between items-baseline">
+<h3 class="noto-serif text-2xl text-on-surface">No. 5</h3>
+<span class="manrope text-[11px] font-medium text-outline">EDP 50ML</span>
+</div>
+<p class="manrope text-sm font-light text-on-surface-variant leading-relaxed">Aldehydic floral bouquet with notes of May rose and jasmine.</p>
+<button class="w-fit mt-4 text-[10px] uppercase tracking-widest font-bold text-primary hover:text-on-primary-fixed-variant transition-colors underline underline-offset-8 decoration-outline-variant/30">View Ritual</button>
+</div>
+</div>
+<!-- Card 2: Cherry Blossom -->
+<div class="group flex flex-col space-y-6 lg:translate-y-12">
+<div class="aspect-[4/5] overflow-hidden rounded-lg bg-primary-container/20 relative transition-transform duration-700 group-hover:scale-[1.02]">
+<img alt="Cherry Blossom Scent" class="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:opacity-100 transition-opacity duration-500" data-alt="Soft focus close up of delicate pink cherry blossoms with a glass perfume bottle catching light in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVS4tDjw3CIQDDRZxQV7FCHJxT4RrDHXp0Hx-u-_nW7aPbnNCJEvQj0LorTtH50lyDqF0G2T52gDJ7ULuPRIsnrc_sMKDrw1R_e6eJvKQIrr81hWUz3X7cylG1Y_a5iWBuzg3LikNxyW_xbqRb64mm8txeoaxmQkjU5EipUe5Z3l9HeROOOSs-pv5XivGeeSqpXXYy7Ef8ZK9MGNlCTADQxKIkU02rQDQFpyh01im619PHKakK5ltUPiBsXgid0ZiKunwueX8e5DU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/20 to-transparent"></div>
+</div>
+<div class="flex flex-col space-y-2">
+<div class="flex justify-between items-baseline">
+<h3 class="noto-serif text-2xl text-on-surface">Cherry Blossom</h3>
+<span class="manrope text-[11px] font-medium text-outline">EXTRAIT</span>
+</div>
+<p class="manrope text-sm font-light text-on-surface-variant leading-relaxed">A whisper of spring rain over delicate Sakura petals and white musk.</p>
+<button class="w-fit mt-4 text-[10px] uppercase tracking-widest font-bold text-primary hover:text-on-primary-fixed-variant transition-colors underline underline-offset-8 decoration-outline-variant/30">View Ritual</button>
+</div>
+</div>
+<!-- Card 3: Spring Flower -->
+<div class="group flex flex-col space-y-6">
+<div class="aspect-[4/5] overflow-hidden rounded-lg bg-tertiary-container/30 relative transition-transform duration-700 group-hover:scale-[1.02]">
+<img alt="Spring Flower Perfume" class="w-full h-full object-cover mix-blend-multiply opacity-85 group-hover:opacity-100 transition-opacity duration-500" data-alt="Vibrant green stems and white lilies in a soft pastel room with ethereal morning light streaming through silk curtains" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB94VVSrDQJR03vUb1-S5nywyjpe3uMPJ7MxHxgjNSBhHHmtMXaxpa1339K2bM-BovQ5a-mEFs2xKp5J0YClxmCMfwuwbxUJvESvDr0a9R62nsa1Ig2g_VAZWEyNE11py8KwRippW-A6BZ1rX2CF-zV62hmrm2LMsYTEmKCnE4iHy0VfG6sVE2bzRTLu9uVctyERYjLm1Lw8gXNeMg-4FNVGElwZf9P52aKGYB28zvV3GFfeiaH4CYlk4gW0ZYHxQ2e82-0Di8TM6I"/>
+<div class="absolute inset-0 bg-gradient-to-t from-tertiary-container/20 to-transparent"></div>
+</div>
+<div class="flex flex-col space-y-2">
+<div class="flex justify-between items-baseline">
+<h3 class="noto-serif text-2xl text-on-surface">Spring Flower</h3>
+<span class="manrope text-[11px] font-medium text-outline">EDP 100ML</span>
+</div>
+<p class="manrope text-sm font-light text-on-surface-variant leading-relaxed">Juicy apricot meets pure jasmine in an exuberant dance of light.</p>
+<button class="w-fit mt-4 text-[10px] uppercase tracking-widest font-bold text-primary hover:text-on-primary-fixed-variant transition-colors underline underline-offset-8 decoration-outline-variant/30">View Ritual</button>
+</div>
+</div>
+<!-- Card 4: Nectarine Blossom & Honey -->
+<div class="group flex flex-col space-y-6">
+<div class="aspect-[4/5] overflow-hidden rounded-lg bg-[#fdf5e6] relative transition-transform duration-700 group-hover:scale-[1.02]">
+<img alt="Nectarine Blossom &amp; Honey" class="w-full h-full object-cover mix-blend-multiply opacity-85 group-hover:opacity-100 transition-opacity duration-500" data-alt="Golden honey dripping from a honeycomb next to a sliced nectarine on ivory linen, warm afternoon sun" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeRzWNW57ItNvJlT0WCZwSUZt5u-aTz2gXXHcwxvNrT1Xgt-pbTIk0fxpU8ThSbt4yc24ytZFsfXi7aI0P0YynbFfzt73szjFz3KVKMddxSRN2BcQ1hEJKfifdGUJeSvVBXfPA07fz-EwJS7D7pEl4Ef_ysYVupeXsuctZLIvfWlaDn7QkFAnx-xSx-Jhu2S9s80VXeItYXHXZbU6Fj-hftTolaNg8pp6BSkhMIM2kQZgm23NY9ollWWQqF5at-vlJdqvDRtUlBEQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#fdf5e6]/40 to-transparent"></div>
+</div>
+<div class="flex flex-col space-y-2">
+<div class="flex justify-between items-baseline">
+<h3 class="noto-serif text-2xl text-on-surface">Nectarine Blossom</h3>
+<span class="manrope text-[11px] font-medium text-outline">COLOGNE</span>
+</div>
+<p class="manrope text-sm font-light text-on-surface-variant leading-relaxed">Succulent nectarine, peach and cassis with delicate spring flowers.</p>
+<button class="w-fit mt-4 text-[10px] uppercase tracking-widest font-bold text-primary hover:text-on-primary-fixed-variant transition-colors underline underline-offset-8 decoration-outline-variant/30">View Ritual</button>
+</div>
+</div>
+<!-- Card 5: Baby Powder -->
+<div class="group flex flex-col space-y-6 lg:translate-y-12">
+<div class="aspect-[4/5] overflow-hidden rounded-lg bg-surface-container-high/40 relative transition-transform duration-700 group-hover:scale-[1.02]">
+<img alt="Baby Powder Fragrance" class="w-full h-full object-cover mix-blend-multiply opacity-75 group-hover:opacity-100 transition-opacity duration-500" data-alt="Soft white linen sheets rumpled in a bright minimalist bedroom, dreamlike airy atmosphere with high key lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlPjX15MCiAJ47rEKY51EHvvTMJNd1oeA1Zq03xZHn_YEu1ulbrr01CBmIhYnOa55XqjwWIcGUcxhMc3z8ZpuF3nD_UXSDC_leuel366RT65Q1wRj4q-v7Sxg4Uhb4OKe_SAW82I95cNJocLIwlJmLnrcy0o-WtfVz2xqviZj9umcl26dWMZbLZs2vBcdyRjgqKrTLJ-JEtWgDd6o4tio04dLHBOzxMq69qgN4_tPZqi8zl414bQpS31iCjGx7wCVUMayKplytRHY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-variant/20 to-transparent"></div>
+</div>
+<div class="flex flex-col space-y-2">
+<div class="flex justify-between items-baseline">
+<h3 class="noto-serif text-2xl text-on-surface">Baby Powder</h3>
+<span class="manrope text-[11px] font-medium text-outline">SOFT MIST</span>
+</div>
+<p class="manrope text-sm font-light text-on-surface-variant leading-relaxed">The purest comforting scent of clean linen and white petals.</p>
+<button class="w-fit mt-4 text-[10px] uppercase tracking-widest font-bold text-primary hover:text-on-primary-fixed-variant transition-colors underline underline-offset-8 decoration-outline-variant/30">View Ritual</button>
+</div>
+</div>
+<!-- Custom Component: The Scent Note Card (Editorial) -->
+<div class="bg-surface-container-low rounded-lg p-12 flex flex-col justify-center border border-outline-variant/10 text-center space-y-6">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="auto_awesome">auto_awesome</span>
+<h4 class="noto-serif text-2xl">The Layering Art</h4>
+<p class="manrope text-sm font-light text-on-surface-variant leading-loose italic">
+                    "Perfume is a story in odor, sometimes a poetry in memory."
+                </p>
+<div class="pt-6">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-lg manrope text-[11px] uppercase tracking-widest hover:opacity-90 transition-all">Book Atelier Session</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f4f3f2] dark:bg-slate-950 w-full border-t border-purple-100/10 flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8">
+<div class="flex flex-col gap-4 items-center md:items-start">
+<div class="text-lg font-serif text-purple-900 dark:text-purple-100">The Final Ritual</div>
+<p class="manrope text-sm font-light tracking-wide text-slate-500 dark:text-slate-500 max-w-xs text-center md:text-left">
+                Capturing the essence of the ephemeral since 2024.
+            </p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-[10px] uppercase tracking-widest text-slate-500 hover:text-purple-700 dark:hover:text-purple-300 underline-offset-4 underline hover:translate-y-[-1px] transition-all duration-300" href="#">Instagram</a>
+<a class="text-[10px] uppercase tracking-widest text-slate-500 hover:text-purple-700 dark:hover:text-purple-300 underline-offset-4 underline hover:translate-y-[-1px] transition-all duration-300" href="#">Pinterest</a>
+<a class="text-[10px] uppercase tracking-widest text-slate-500 hover:text-purple-700 dark:hover:text-purple-300 underline-offset-4 underline hover:translate-y-[-1px] transition-all duration-300" href="#">Shipping</a>
+<a class="text-[10px] uppercase tracking-widest text-slate-500 hover:text-purple-700 dark:hover:text-purple-300 underline-offset-4 underline hover:translate-y-[-1px] transition-all duration-300" href="#">Privacy Policy</a>
+<a class="text-[10px] uppercase tracking-widest text-slate-500 hover:text-purple-700 dark:hover:text-purple-300 underline-offset-4 underline hover:translate-y-[-1px] transition-all duration-300" href="#">Terms of Service</a>
+</div>
+<div class="manrope text-[10px] uppercase tracking-widest text-slate-500 dark:text-slate-500">
+            © 2024 The Final Ritual. All rights reserved.
+        </div>
+</footer>
+</body></html>

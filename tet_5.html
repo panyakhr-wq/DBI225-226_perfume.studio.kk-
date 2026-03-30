@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="light" lang="th">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Checkout - perfume.studio.kk</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Plus+Jakarta+Sans:wght@200;300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6f5092",
+                        "background": "#faf9f8",
+                        "surface-container": "#eeeeed",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#7a757c",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .font-elegant { font-family: 'Cinzel', serif; }
+        .font-calligraphy { font-family: 'Pinyon Script', cursive; }
+        .nav-modern {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #faf9f8; color: #1a1c1c; }
+        #slip-preview-img { max-height: 200px; display: none; border-radius: 0.5rem; margin-bottom: 1rem; border: 1px solid #e2e8f0; }
+        ::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+
+<body class="bg-background min-h-screen">
+
+    <nav class="fixed top-0 w-full z-50 nav-modern"> 
+        <div class="max-w-7xl mx-auto px-10 h-16 flex items-center justify-between">
+            <div class="flex flex-col">
+                <span class="font-elegant text-sm tracking-[0.3em] font-bold text-slate-800">PERFUME.STUDIO.KK</span>
+                <span class="text-[8px] tracking-[0.5em] text-gray-400 uppercase">A Modern Ritual</span>
+            </div>
+            
+            <div class="hidden md:flex gap-10 font-elegant text-[10px] tracking-widest text-gray-400 uppercase items-center">
+                <a href="index.html" class="hover:text-primary transition">home</a>
+                <a href="tet_3.html" class="hover:text-primary transition">Gallery</a>
+                <a href="cart.html" class="material-symbols-outlined text-slate-600 hover:text-primary transition text-[20px]">shopping_bag</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
+        <header class="mb-16 text-center">
+            <h1 class="font-elegant text-4xl md:text-5xl text-slate-800 tracking-tight mb-4">Order Confirmation</h1>
+            <p class="text-xs font-medium tracking-widest uppercase text-slate-400">กรุณาระบุข้อมูลให้ครบถ้วนเพื่อดำเนินการสั่งซื้อ</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            <div class="lg:col-span-7 space-y-12">
+                <section class="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex items-center gap-3 mb-10 border-b border-slate-50 pb-4">
+                        <span class="text-[10px] font-bold text-primary">01</span>
+                        <h2 class="text-xl font-semibold text-slate-800">Shipping Details</h2>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="space-y-1.5">
+                            <label class="text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-1">Full Name</label>
+                            <input id="cust-name" class="w-full bg-slate-50 border border-slate-200 rounded-xl focus:ring-1 focus:ring-primary focus:border-primary py-3.5 px-4 text-sm transition-all" placeholder="ชื่อ-นามสกุล ของผู้รับ" type="text"/>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-1.5">
+                                <label class="text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-1">Phone Number</label>
+                                <input id="cust-phone" class="w-full bg-slate-50 border border-slate-200 rounded-xl focus:ring-1 focus:ring-primary focus:border-primary py-3.5 px-4 text-sm transition-all" placeholder="หมายเลขโทรศัพท์ติดต่อ" type="tel"/>
+                            </div>
+                            <div class="space-y-1.5">
+                                <label class="text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-1">Postal Code</label>
+                                <input id="cust-address-zip" class="w-full bg-slate-50 border border-slate-200 rounded-xl focus:ring-1 focus:ring-primary focus:border-primary py-3.5 px-4 text-sm transition-all" placeholder="รหัสไปรษณีย์" type="text"/>
+                            </div>
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-[10px] uppercase tracking-widest text-slate-500 font-bold ml-1">Address</label>
+                            <textarea id="cust-address" class="w-full bg-slate-50 border border-slate-200 rounded-xl focus:ring-1 focus:ring-primary focus:border-primary py-3.5 px-4 text-sm transition-all resize-none" placeholder="บ้านเลขที่, ถนน, ตำบล, อำเภอ, จังหวัด" rows="3"></textarea>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="flex items-center gap-3 mb-10 border-b border-slate-50 pb-4">
+                        <span class="text-[10px] font-bold text-primary">02</span>
+                        <h2 class="text-xl font-semibold text-slate-800">Payment Information</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <div class="space-y-6">
+                            <div class="bg-slate-50 p-6 rounded-2xl flex flex-col items-center justify-center border border-slate-100">
+                                <div class="w-36 h-36 bg-white p-2 rounded-lg mb-4 shadow-sm border border-slate-100">
+                                    <img alt="QR Code" class="w-full h-full mix-blend-multiply opacity-90" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=PROMPTPAY_DATA_HERE"/>
+                                </div>
+                                <p class="text-[10px] font-bold text-slate-600 uppercase tracking-widest">Scan to Pay (PromptPay)</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label class="text-[10px] uppercase tracking-widest text-slate-500 mb-4 font-bold">Payment Evidence</label>
+                            <input type="file" id="slip-upload" accept="image/*" class="hidden" onchange="previewSlip(this)">
+                            <div onclick="document.getElementById('slip-upload').click()" class="flex-grow border-2 border-dashed border-slate-200 rounded-2xl flex flex-col items-center justify-center p-8 bg-slate-50/50 hover:bg-white hover:border-primary transition-all cursor-pointer group">
+                                <img id="slip-preview-img" src="" alt="Slip Preview">
+                                <div id="upload-label" class="text-center">
+                                    <span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors mb-3" style="font-size: 32px;">add_photo_alternate</span>
+                                    <p class="text-xs text-slate-400 font-medium">แนบหลักฐานการโอนเงิน</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="lg:col-span-5 lg:sticky lg:top-32">
+                <div class="bg-surface-container p-8 md:p-10 rounded-2xl">
+                    <h3 class="font-elegant text-xl mb-8 font-semibold text-slate-800">Order Summary</h3>
+                    <div class="space-y-6 mb-10 max-h-[400px] overflow-y-auto pr-2" id="order-items-list"></div>
+
+                    <div class="border-t border-slate-300/30 pt-8">
+                        <div class="flex justify-between items-baseline pt-4">
+                            <span class="text-xs uppercase tracking-widest font-bold text-slate-500">Total Price</span>
+                            <span id="grand-total" class="text-3xl font-light text-primary tracking-tighter">THB 0.00</span>
+                        </div>
+                    </div>
+
+                    <button onclick="completeRitual()" id="submit-btn" class="w-full mt-10 bg-primary text-white py-4 rounded-xl text-[11px] uppercase tracking-[0.2em] font-bold hover:bg-[#573878] transition-all shadow-lg h-14">
+                        Confirm Order
+                    </button>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyCnrh9ml3WzDM52Fe8cOMxXQ_cNR_e1OzA",
+        authDomain: "perfume-studio-kk-17495.firebaseapp.com",
+        projectId: "perfume-studio-kk-17495",
+        appId: "1:1088243416074:web:761a87067af6259fadb3f3"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const cart = JSON.parse(localStorage.getItem('perfume_cart')) || [];
+
+    if (cart.length === 0) {
+        alert("ตะกร้าสินค้าว่างเปล่า กรุณาเลือกสินค้าก่อนครับ");
+        window.location.href = "tet_3.html";
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const listContainer = document.getElementById('order-items-list');
+        let total = 0;
+
+        listContainer.innerHTML = cart.map(item => {
+            total += (item.price * item.qty);
+            return `
+                <div class="flex gap-5 items-center bg-white/50 p-3 rounded-xl border border-white/50">
+                    <div class="w-16 h-20 bg-white rounded-lg overflow-hidden flex-shrink-0 border border-slate-100 p-1 shadow-sm">
+                        <img class="w-full h-full object-contain" src="${item.image || 'eiei.png'}" onerror="this.src='https://via.placeholder.com/150'"/>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-start">
+                            <p class="text-[11px] font-bold text-slate-800 uppercase tracking-tight">${item.scent}</p>
+                            <p class="text-[10px] font-bold text-primary">x${item.qty}</p>
+                        </div>
+                        <p class="text-[9px] uppercase tracking-widest text-slate-400 mt-1 font-semibold">
+                            ${item.size} / ${item.color} ${item.engraving ? '/ "' + item.engraving + '"' : ''}
+                        </p>
+                        <p class="text-[10px] text-slate-600 mt-1">THB ${(item.price * item.qty).toLocaleString()}</p>
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        document.getElementById('grand-total').innerText = `THB ${total.toLocaleString()}.00`;
+    });
+
+    window.previewSlip = function(input) {
+        const file = input.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = document.getElementById('slip-preview-img');
+                img.src = e.target.result;
+                img.style.display = 'block';
+                document.getElementById('upload-label').style.display = 'none';
+            }
+            reader.readAsDataURL(file);
+        }
+    }
+
+    window.completeRitual = async function() {
+        const name = document.getElementById('cust-name').value;
+        const phone = document.getElementById('cust-phone').value;
+        const address = document.getElementById('cust-address').value;
+        const zip = document.getElementById('cust-address-zip').value;
+        const slipFile = document.getElementById('slip-upload').files[0];
+
+        if(!name || !phone || !address || !zip || !slipFile) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'ข้อมูลไม่ครบถ้วน',
+                text: 'กรุณากรอกข้อมูลการจัดส่งและแนบสลิปให้เรียบร้อย',
+                confirmButtonColor: '#6f5092'
+            });
+            return;
+        }
+
+        const btn = document.getElementById('submit-btn');
+        btn.innerText = "PROCESSING...";
+        btn.disabled = true;
+
+        try {
+            const formData = new FormData();
+            formData.append("image", slipFile);
+            const imgbbApiKey = "64b4f23dd6d3db059804dba9151e4e94"; 
+            
+            const imgbbRes = await fetch(`https://api.imgbb.com/1/upload?key=${imgbbApiKey}`, {
+                method: "POST",
+                body: formData
+            });
+            const imgData = await imgbbRes.json();
+            
+            if (!imgData.success) throw new Error("Upload Slip Failed");
+            const slipURL = imgData.data.url;
+
+            await addDoc(collection(db, "orders"), {
+                customerName: name,
+                phone: phone,
+                address: `${address} ${zip}`,
+                items: cart,
+                totalAmount: cart.reduce((sum, item) => sum + (item.price * item.qty), 0),
+                slipImage: slipURL,
+                status: "Awaiting Verification",
+                createdAt: serverTimestamp()
+            });
+
+            // ล้างตะกร้า
+            localStorage.removeItem('perfume_cart');
+
+            // แสดง Pop-up สำเร็จด้วย SweetAlert2
+            Swal.fire({
+                title: 'Payment Successful',
+                text: 'ขอบคุณที่ร่วมเป็นส่วนหนึ่งของ Ritual การสั่งซื้อของคุณเสร็จสมบูรณ์แล้ว',
+                icon: 'success',
+                confirmButtonColor: '#6f5092',
+                confirmButtonText: 'Back to Home',
+                background: '#ffffff',
+                customClass: {
+                    title: 'font-elegant'
+                }
+            }).then((result) => {
+                window.location.href = "index.html";
+            });
+
+        } catch (error) {
+            Swal.fire({
+                icon: 'error',
+                title: 'เกิดข้อผิดพลาด',
+                text: error.message,
+                confirmButtonColor: '#6f5092'
+            });
+            btn.innerText = "Confirm Order";
+            btn.disabled = false;
+        }
+    }
+</script>
+</body>
+</html>
